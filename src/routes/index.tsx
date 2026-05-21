@@ -8,7 +8,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Tobi William Akeem is a Flutter developer crafting elegant, performant cross-platform mobile experiences.",
+          "Tobi William Akeem is a mobile developer with 4 years of technical experience in building scalable mobile applications using flutter and currently learning Swift. I leverage my coding skills in creating technical solutions to problems for socio-economic good. Aside from my technical skills, I have acquired soft skills such as team-playing, communication, problem-solving, critical thinking, etc.",
       },
       { property: "og:title", content: "Tobi William Akeem — Flutter Developer" },
       {
@@ -21,65 +21,87 @@ export const Route = createFileRoute("/")({
   component: Portfolio,
 });
 
-const projects = [
+type Project = {
+  year: string;
+  name: string;
+  role: string;
+  summary: string;
+  stack: string[];
+  storeUrl?: string;
+};
+
+const projects: Project[] = [
+  {
+    year: "2026",
+    name: "Shop Society",
+    role: "Mobile Engineer",
+    summary:
+      "Shop Society brings shops, reps, and customers together in one powerful community-driven platform. Discover products, share content, grow your brand, and finally get seen without fighting the algorithm. This is commerce… reimagined for small shops.",
+    stack: ["Flutter", "Bloc", "Firebase", "Stripe", 'OAuth', "Dio", "WebSockets", "Rest API"],
+    storeUrl: "https://apps.apple.com/us/app/shop-society/id6757849588",
+  },
   {
     year: "2025",
-    name: "Lumen Banking",
+    name: "LoveNest",
     role: "Lead Mobile Engineer",
     summary:
-      "A neo-banking app for emerging markets. Built end-to-end in Flutter with biometric auth, instant transfers, and offline-first ledgers.",
-    stack: ["Flutter", "Riverpod", "Firebase", "Hive"],
+      "A dating app designed exclusively for single parents, Love Nest offers a safe, respectful and authentic space, where parenting, values and life choices come first.",
+    stack: ["Flutter", "Bloc", "Firebase", "In-App Purchases", 'Stripe', "Dio", "WebSockets", "Rest API", "Rive", "OAuth"],
+    storeUrl: "https://apps.apple.com/us/app/love-nest-single-parents/id6747092702",
   },
   {
     year: "2024",
-    name: "Tide — Habit Companion",
-    role: "Founding Engineer",
+    name: "O3 Cards",
+    role: "Mobile Engineer",
     summary:
-      "A mindful habit tracker with custom Rive animations and a tactile haptic layer. 120k+ downloads across iOS and Android.",
-    stack: ["Flutter", "Rive", "Supabase", "Bloc"],
+      "O3 Capital is Nigeria’s first non-bank based credit card issuing company, offering customers convenient payment cards and loan platform.",
+    stack: ["Flutter", "Riverpod", "Firebase", "Dio", "WebSockets", "Rest API"],
+    storeUrl: "https://apps.apple.com/us/app/o3cards/id1565911719",
   },
   {
     year: "2024",
-    name: "Field Atlas",
-    role: "Mobile Architect",
+    name: "Ecstasy | Virtual Dollar Card",
+    role: "Lead Mobile Engineer",
     summary:
-      "Field operations app for agritech teams in West Africa. Works offline, syncs intelligently, and ships GPS-tagged reports.",
-    stack: ["Flutter", "Isar", "Mapbox", "Dio"],
+      "An app where you can securely pay online in dollars and handle everyday bills in one place",
+    stack: ["Flutter", "Provider", "Dio", "WebSockets", "Rest API", "Secure Storage"],
+    storeUrl: "https://apps.apple.com/us/app/ecstasy-virtual-dollar-card/id6448960100",
   },
   {
     year: "2023",
-    name: "Cadence Studio",
-    role: "Independent",
+    name: "SekiApp",
+    role: "Mobile Engineer",
     summary:
-      "A pocket music sketchpad. Real-time audio engine bridged to native via Platform Channels with sub-20ms latency.",
-    stack: ["Flutter", "Swift", "Kotlin", "FFI"],
+      "A digital exchange platform which allows users to trade over 200 categories of gift cards, generate Virtual Dollar Cards for international shopping, and pay local utility bills",
+    stack: ["Flutter", "Riverpod", "Dio", "Rest API", "Secure Storage"],
+    storeUrl: "https://apps.apple.com/us/app/sekiapp/id1622624126",
   },
 ];
 
 const experience = [
   {
-    period: "2024 — Now",
-    role: "Lead Mobile Engineer",
-    company: "Lumen Financial",
-    location: "Remote",
-    notes:
-      "Leading a team of four building consumer banking on Flutter. Owning architecture, CI/CD, and the design-engineering handoff.",
-  },
-  {
-    period: "2022 — 2024",
-    role: "Senior Flutter Developer",
-    company: "Northwind Labs",
-    location: "Lagos · Remote",
-    notes:
-      "Shipped six production apps across fintech and health. Wrote the in-house Flutter starter and component library still used today.",
-  },
-  {
-    period: "2020 — 2022",
+    period: "2025 — Now",
     role: "Mobile Developer",
     company: "Freelance",
     location: "Worldwide",
     notes:
       "Partnered with founders and studios across Europe and Africa to launch MVPs — most went from blank repo to App Store in under 90 days.",
+  },
+  {
+    period: "2024 — Now",
+    role: "Senior Mobile Engineer",
+    company: "Nativebrand Technology and Design Agency Ltd",
+    location: "Lagos · Remote",
+    notes:
+      "Shipped 5 production apps across fintech and on-demand services. Led the mobile architecture for a rapidly growing startup, ensuring scalability and maintainability as the team expanded.",
+  },
+  {
+    period: "2022 — 2023",
+    role: "Flutter Developer - Lead Mobile Engineer",
+    company: "Wiseki Technologies",
+    location: "Ibadan · Hybrid",
+    notes:
+      "Took ownership of the mobile codebase, leading the development of a digital exchange platform with over 100k users. Implemented best practices and mentored junior developers, fostering a culture of code quality and continuous learning.",
   },
 ];
 
@@ -88,6 +110,8 @@ const skills = [
   "Firebase", "Supabase", "GraphQL", "REST", "WebSockets",
   "Swift", "Kotlin", "Platform Channels", "FFI",
   "Figma", "Rive", "Lottie", "Fastlane", "GitHub Actions",
+  "Clean Architecture", "TDD", "CI/CD", "Agile Methodologies",
+  "Effective Communication", "Team Leadership", "Problem Solving", "Critical Thinking",
 ];
 
 function Portfolio() {
@@ -99,7 +123,7 @@ function Portfolio() {
         {/* Top bar */}
         <header className="mb-24 flex items-center justify-between text-xs uppercase tracking-[0.2em] text-muted-foreground">
           <span className="text-gold">TWA</span>
-          <span>Flutter · Mobile · 2025</span>
+          <span>Flutter · Mobile · 2026</span>
         </header>
 
         {/* Hero */}
@@ -114,7 +138,7 @@ function Portfolio() {
             />
             <div className="flex flex-col">
               <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                Available · Q3 2025
+                Available · Q2 2026
               </span>
               <span className="font-display text-sm text-foreground">
                 Open to senior &amp; lead roles
@@ -127,14 +151,17 @@ function Portfolio() {
           </h1>
 
           <p className="mt-8 text-lg leading-relaxed text-muted-foreground sm:text-xl">
-            I'm a Flutter developer building cross-platform apps that feel
-            considered, fast, and quietly luxurious. Five years shipping
-            production mobile software for banks, founders, and field teams.
+            I'm a mobile developer with 4 years of technical experience in building
+            scalable mobile applications using flutter.
+            I leverage my coding skills in creating technical solutions to problems
+            for socio-economic good. Aside from my technical skills, I have acquired
+            soft skills such as team-playing, communication, problem-solving,
+            critical thinking, etc.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
             <a
-              href="mailto:hello@tobiakeem.dev"
+              href="mailto:akeemtobi6@gmail.com"
               className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
             >
               Start a project
@@ -152,9 +179,9 @@ function Portfolio() {
         {/* Numbers strip */}
         <section className="mb-28 grid grid-cols-3 gap-6 border-y border-border-strong py-8">
           {[
-            { k: "5y", v: "Shipping Flutter" },
-            { k: "14", v: "Apps in production" },
-            { k: "350k+", v: "Combined installs" },
+            { k: "4y", v: "Shipping Flutter" },
+            { k: "10", v: "Apps in production" },
+            { k: "100k+", v: "Combined installs" },
           ].map((s) => (
             <div key={s.v}>
               <div className="font-display text-3xl text-gold sm:text-4xl">{s.k}</div>
@@ -174,33 +201,72 @@ function Portfolio() {
                 key={p.name}
                 className="group relative border-t border-border-strong py-8 transition-colors"
               >
-                <div className="flex items-baseline justify-between gap-6">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-display text-xs text-muted-foreground">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="font-display text-2xl text-foreground transition-colors group-hover:text-gold sm:text-3xl">
-                      {p.name}
-                    </h3>
-                  </div>
-                  <span className="font-display text-xs text-gold">{p.year}</span>
-                </div>
-                <div className="mt-3 pl-10 text-sm uppercase tracking-[0.18em] text-muted-foreground">
-                  {p.role}
-                </div>
-                <p className="mt-4 pl-10 text-base leading-relaxed text-foreground/90">
-                  {p.summary}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2 pl-10">
-                  {p.stack.map((s) => (
-                    <span
-                      key={s}
-                      className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div>
+                {p.storeUrl ? (
+                  <a
+                    href={p.storeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <div className="flex items-baseline justify-between gap-6">
+                      <div className="flex items-baseline gap-4">
+                        <span className="font-display text-xs text-muted-foreground">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <h3 className="font-display text-2xl text-foreground transition-colors group-hover:text-gold sm:text-3xl">
+                          {p.name}
+                        </h3>
+                      </div>
+                      <span className="font-display text-xs text-gold">{p.year}</span>
+                    </div>
+                    <div className="mt-3 pl-10 text-sm uppercase tracking-[0.18em] text-muted-foreground">
+                      {p.role}
+                    </div>
+                    <p className="mt-4 pl-10 text-base leading-relaxed text-foreground/90">
+                      {p.summary}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2 pl-10">
+                      {p.stack.map((s) => (
+                        <span
+                          key={s}
+                          className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </a>
+                ) : (
+                  <>
+                    <div className="flex items-baseline justify-between gap-6">
+                      <div className="flex items-baseline gap-4">
+                        <span className="font-display text-xs text-muted-foreground">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <h3 className="font-display text-2xl text-foreground transition-colors group-hover:text-gold sm:text-3xl">
+                          {p.name}
+                        </h3>
+                      </div>
+                      <span className="font-display text-xs text-gold">{p.year}</span>
+                    </div>
+                    <div className="mt-3 pl-10 text-sm uppercase tracking-[0.18em] text-muted-foreground">
+                      {p.role}
+                    </div>
+                    <p className="mt-4 pl-10 text-base leading-relaxed text-foreground/90">
+                      {p.summary}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2 pl-10">
+                      {p.stack.map((s) => (
+                        <span
+                          key={s}
+                          className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                )}
               </li>
             ))}
           </ul>
@@ -276,16 +342,16 @@ function Portfolio() {
               <span className="gradient-gold-text">Let's build it.</span>
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <ContactRow label="Email" value="hello@tobiakeem.dev" href="mailto:hello@tobiakeem.dev" />
-              <ContactRow label="GitHub" value="@tobiakeem" href="https://github.com" />
-              <ContactRow label="LinkedIn" value="in/tobiakeem" href="https://linkedin.com" />
-              <ContactRow label="X / Twitter" value="@tobiakeem" href="https://x.com" />
+              <ContactRow label="Email" value="akeemtobi6@gmail.com" href="mailto:akeemtobi6@gmail.com" />
+              <ContactRow label="GitHub" value="@williamtobs" href="https://github.com/williamtobs" />
+              {/* open in new tab */}
+              <ContactRow label="LinkedIn" value="in/tobi-william" href="https://www.linkedin.com/in/tobi-william-806a341aa/" target="_blank" />
             </div>
           </div>
         </section>
 
         <footer className="hairline flex flex-col items-start justify-between gap-3 pt-8 text-xs uppercase tracking-[0.2em] text-muted-foreground sm:flex-row sm:items-center">
-          <span>© 2025 Tobi William Akeem</span>
+          <span>© 2026 Tobi William Akeem</span>
           <span>Designed &amp; built in Flutter spirit ✦</span>
         </footer>
       </div>
@@ -309,14 +375,24 @@ function ContactRow({
   label,
   value,
   href,
+  target,
+  rel,
 }: {
   label: string;
   value: string;
   href: string;
+  target?: string;
+  rel?: string;
 }) {
+  const isExternal = href.startsWith("http");
+  const targetProp = target ?? (isExternal ? "_blank" : undefined);
+  const computedRel = rel ?? (targetProp === "_blank" ? "noopener noreferrer" : undefined);
+
   return (
     <a
       href={href}
+      target={targetProp}
+      rel={computedRel}
       className="group flex items-center justify-between border-b border-border py-3 transition-colors hover:border-gold"
     >
       <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
