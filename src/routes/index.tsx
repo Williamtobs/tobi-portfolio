@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import portrait from "@/assets/portrait.jpg";
+import portrait from "@/assets/portrait.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -77,6 +77,8 @@ const projects: Project[] = [
     storeUrl: "https://apps.apple.com/us/app/sekiapp/id1622624126",
   },
 ];
+
+const cvUrl = "https://docs.google.com/document/d/1v1PwBFTURCZy006_lccsM-mymLbeCwml3dNK6DOx7c8/edit?usp=sharing";
 
 const experience = [
   {
@@ -344,7 +346,7 @@ function Portfolio() {
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <ContactRow label="Email" value="akeemtobi6@gmail.com" href="mailto:akeemtobi6@gmail.com" />
               <ContactRow label="GitHub" value="@williamtobs" href="https://github.com/williamtobs" />
-              {/* open in new tab */}
+              <ContactRow label="CV" value="View Google Doc" href={cvUrl} target="_blank" />
               <ContactRow label="LinkedIn" value="in/tobi-william" href="https://www.linkedin.com/in/tobi-william-806a341aa/" target="_blank" />
             </div>
           </div>
